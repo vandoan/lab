@@ -4,6 +4,7 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= image_tag(restaurant.image_url, :width => 200 (:thumb) if restaurant.image?) %>:</strong></dt>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @restaurant.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:location) %>:</strong></dt>
@@ -12,6 +13,10 @@
   <dd><%= @restaurant.about %></dd>
   <dt><strong><%= model_class.human_attribute_name(:number) %>:</strong></dt>
   <dd><%= @restaurant.number %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd><%= image_tag(@restaurant.image_url, :width => 200) if @restaurant.image.present? %></dd>
+
 </dl>
 
 <div class="form-actions">
