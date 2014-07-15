@@ -22,6 +22,12 @@
 
 </dl>
 
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
+
+<h3>Nearby restaurants</h3>
+
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               restaurants_path, :class => 'btn'  %>

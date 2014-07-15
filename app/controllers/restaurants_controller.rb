@@ -4,7 +4,11 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
+    if params[:search].present?
+        @restaurants = restaurant.near(params[:search],50, :order=> :distance)
+    else
     @restaurants = Restaurant.all
+    end
   end
 
   # GET /restaurants/1

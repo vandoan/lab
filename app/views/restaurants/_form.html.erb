@@ -50,6 +50,17 @@
   </div> 
 
 
+    <div class="control-group">
+    <%= f.label :map, :class => 'control-label' %>
+      <div class="controls">
+        <%= form_tag restaurants_path, :method => :get do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search Near", :name => nil %>
+        <% end %>
+
+
+
   <div class="form-actions">
     <%= f.submit :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

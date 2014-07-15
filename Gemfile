@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'geocoder'
+gem 'nifty-generators'
 
 
 gem 'twitter-bootstrap-rails'
