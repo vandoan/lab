@@ -13,20 +13,18 @@
   <dd><%= @restaurant.about %></dd>
   <dt><strong><%= model_class.human_attribute_name(:number) %>:</strong></dt>
   <dd><%= @restaurant.number %></dd>
-
+  <br /> 
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= image_tag(@restaurant.image_url, :width => 200) if @restaurant.image.present? %></dd>
+  <dd><%= image_tag(@restaurant.image_url, :width => 300) if @restaurant.image.present? %></dd>
 <br /> 
   <dt><strong><%= model_class.human_attribute_name(:Menu) %>:</strong></dt>
-  <dd><%= image_tag(@restaurant.attachment_url, :width => 200) if @restaurant.attachment.present? %></dd>
+  <dd><%= image_tag(@restaurant.attachment_url, :width => 300) if @restaurant.attachment.present? %></dd>
 
-</dl>
-
-
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
-
-<h3>Nearby restaurants</h3>
-
+ <dt><strong><%= model_class.human_attribute_name(:map) %>:</strong></dt>
+ <br /> 
+    <dd> <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
+    </dd> 
+ </dl> 
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
