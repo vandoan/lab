@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'geocoder'
 gem 'nifty-generators'
+gem 'devise'
 
 
 gem 'twitter-bootstrap-rails'

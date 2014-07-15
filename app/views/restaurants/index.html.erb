@@ -1,6 +1,6 @@
 <%- model_class = Restaurant -%>
 <div class="page-header">
-  <h1>Mi Restaurants in NY</h1>
+  <h1>Grea-eats  </h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -33,10 +33,10 @@
         <td><%= restaurant.about %></td>
         <td><%= restaurant.number %></td>
         <td><%= restaurant.created_at.strftime("%a %b %y")  %></td>
-       
+        <td><%= image_tag(restaurant.attachment_url, :width => 100) if restaurant.attachment.present? %></td>
 
 
-        <td>        
+        <td>      
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_restaurant_path(restaurant), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -54,8 +54,9 @@
             new_restaurant_path,
             :class => 'btn btn-primary' %>
 
-<br /> <div align=right>
-<iframe width="300" height="300" frameborder="0" style=" text-align:right; border:0" src="https://www.google.com/maps/embed/v1/place?q=Financial%20District%2C%20NY%2C%20United%20States&key=AIzaSyBgjl5OaoXkgZ-wwnltwlyZhhgLYn0_kvE"></iframe>
+<br /> <div align=right> 
+  <h4> Find us in New York </h4> 
+  <iframe width="200" height="200" frameborder="0" style=" text-align:right; border:0" src="https://www.google.com/maps/embed/v1/place?q=Financial%20District%2C%20NY%2C%20United%20States&key=AIzaSyBgjl5OaoXkgZ-wwnltwlyZhhgLYn0_kvE"></iframe>
 </div> 
 
 
