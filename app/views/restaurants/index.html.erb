@@ -1,6 +1,6 @@
 <%- model_class = Restaurant -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Mi Restaurants in NY</h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -11,23 +11,29 @@
       <th><%= model_class.human_attribute_name(:location) %></th>
       <th><%= model_class.human_attribute_name(:about) %></th>
       <th><%= model_class.human_attribute_name(:number) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:created_on) %></th>
+      <th><%= model_class.human_attribute_name(:menu) %></th>
+
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
+
   </thead>
   <tbody>
+
+
     <% @restaurants.each do |restaurant| %>
       <tr>
-
         <td><%= image_tag(restaurant.image_url, :width => 100)  if restaurant.image %></td>
-
         <td><%= link_to restaurant.id, restaurant_path(restaurant) %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.location %></td>
         <td><%= restaurant.about %></td>
         <td><%= restaurant.number %></td>
-        <td><%=l restaurant.created_at %></td>
-        <td>
+        <td><%= restaurant.created_at.strftime("%a %b %y")  %></td>
+        <td><%= image_tag(restaurant.attachment_url, :width => 70)  if restaurant.attachment %></td>
+
+        <td>        
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_restaurant_path(restaurant), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -44,3 +50,14 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_restaurant_path,
             :class => 'btn btn-primary' %>
+
+<br /> <div align=right>
+<iframe width="300" height="300" frameborder="0" style=" text-align:right; border:0" src="https://www.google.com/maps/embed/v1/place?q=Financial%20District%2C%20NY%2C%20United%20States&key=AIzaSyBgjl5OaoXkgZ-wwnltwlyZhhgLYn0_kvE"></iframe>
+</div> 
+
+
+
+
+
+
+
