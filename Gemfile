@@ -5,6 +5,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'geocoder'
 gem 'nifty-generators'
 gem 'devise'
+gem "parsley-rails"
 
 
 gem 'twitter-bootstrap-rails'

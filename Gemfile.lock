@@ -80,6 +80,8 @@ GEM
     multi_json (1.10.1)
     nifty-generators (0.4.6)
     orm_adapter (0.5.0)
+    parsley-rails (2.0.2.0)
+      railties (>= 3.0.0)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -161,6 +163,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   nifty-generators
+  parsley-rails
   rails (= 4.1.4)
   rmagick
   sass-rails (~> 4.0.3)
